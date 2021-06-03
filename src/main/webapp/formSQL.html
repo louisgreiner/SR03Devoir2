@@ -1,0 +1,53 @@
+<html>
+	<head> 
+		<title>Create user</title> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+	</head>
+ 	<body> 
+ 		<script type="text/javascript">
+ 			function checkInputs(){
+ 				//var charsName = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZéèëêïøàùäñ";
+ 				var nameRegex = "^[A-Za-zÀ-ÖØ-öø-ÿ\w{2-20}]+$";
+ 				var pwdRegex = "^[A-Za-zÀ-ÖØ-öø-ÿ\w{2-20}]+$";
+ 				
+ 				if(document.forms["myForm"]["frname"].value.match(nameRegex) == null){
+					alert("Illegal characters detected in first name!");
+					document.forms["myForm"]["frname"].focus();
+					return false;
+ 				}
+ 				
+ 				if(document.forms["myForm"]["faname"].value.match(nameRegex) == null){
+					alert("Illegal characters detected in family name!");
+					document.forms["myForm"]["faname"].focus();
+					return false;
+ 				}
+ 				
+ 				if(document.forms["myForm"]["faname"].value.match(nameRegex) == null){
+					alert("Illegal characters detected in family name!");
+					document.forms["myForm"]["faname"].focus();
+					return false;
+ 				}
+ 				
+ 			}
+ 		</script>
+		<form name="myForm" action="http://localhost:8080/SR03-Devoir2/SignUpSQL" onsubmit="return checkInputs()" method="post"> 
+			<label> First name </label> 
+				<input type="text" id="frname" name="User first name" required/><br/> 
+			<label> Family name </label> 
+				<input type="text" id="faname" name="User familly name" required/><br/> 
+			<label> Email </label> 
+				<input type="email" id="email" name="User email" required/> <br> 
+			<label> Password </label> 
+				<input type="password" id="psw" name="User password" required/><br/> 
+			<label> Admin </label> 
+				<input type="radio" name="role" value="admin" checked/><br/> 
+			<label> Other </label> 
+				<input type="radio" name="role" value="other"/> <br/> 
+				<input type="submit" value="Submit"> 
+		</form>
+		<form action="userconnect.jsp">
+        	<button type="submit">Retour à l'accueil</button>
+      	</form>
+	</body> 
+ </html>

@@ -1,0 +1,11 @@
+@charset "ISO-8859-1";
+
+body{
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+.website{
+	font-family: 'Oi', cursive;
+}
